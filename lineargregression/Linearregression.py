@@ -17,7 +17,7 @@ class LinearRegressor():
         for _ in range(self.n_iter):
             y_pred=np.dot(X, self.weigths) + self.bias
             #calculating derivates weights and bias
-            dW=(1/num_samples) * np.dot(X, (y_pred-y) )
+            dW=(1/num_samples) * np.dot(X.T, (y_pred-y) )
             db=(1/num_samples) * np.sum(y_pred-y)
             #updating weigths and bias 
             self.weigths -=(self.learning_rate * dW)
